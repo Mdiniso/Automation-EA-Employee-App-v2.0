@@ -1,16 +1,27 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>Automation-EA-Employee-App-v2.0</groupId>
-  <artifactId>Automation-EA-Employee-App-v2.0</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>Automation-EA-Employee-App-v2.0</name>
-  <description>Automation-EA-Employee-App-v2.0</description>
-  
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Package naming convention: com.company.project -->
+    <groupId>com.automation.ea.employeeapp</groupId>
+
+    <!-- Project name in standard maven format -->
+    <artifactId>automation-ea-employee-app</artifactId>
+
+    <version>0.0.1-SNAPSHOT</version>
+
+    <name>Automation EA Employee App</name>
+    <description>Selenium Automation for EA Employee App</description>
+
+    <dependencies>
+        <!-- Selenium Java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.34.0</version>
         </dependency>
     </dependencies>
+
 </project>

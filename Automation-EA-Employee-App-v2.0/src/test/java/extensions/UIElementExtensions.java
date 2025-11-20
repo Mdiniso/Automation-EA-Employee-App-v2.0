@@ -3,8 +3,7 @@
  */
 package extensions;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 /**
@@ -13,42 +12,35 @@ import org.openqa.selenium.support.ui.Select;
 public class UIElementExtensions {
 	
 	
-	public static void performEnterText(WebDriver driver,  By locator, String value) {
+	public static void performEnterText(WebElement locator, String value) {
 		
-		driver.findElement(locator).click();
+		locator.click();
 		
-		driver.findElement(locator).clear();
-		driver.findElement(locator).sendKeys(value);
+		locator.clear();
+		locator.sendKeys(value);
 		
 	}
 	
-	public static void performClick(WebDriver driver, By locator) {
-		
-		driver.findElement(locator).click();
+	public static void performClick(WebElement locator) {
+		locator.click();
 	}
 	
 	
 	
-	public static void performDropDownSelectionText(WebDriver driver, By locator, String dropDownValue) {
-		Select select=new Select(driver.findElement(locator));
+	public static void performDropDownSelectionText(WebElement locator, String dropDownValue) {
+		Select select=new Select(locator);
 		
 		select.selectByVisibleText(dropDownValue);
 		
 	}
 
 	
-	public static void performDropDownSelectionIndex(WebDriver driver, By locator, int dropDownValue) {
-		Select select=new Select(driver.findElement(locator));
+	public static void performDropDownSelectionIndex(WebElement locator, int dropDownValue) {
+		Select select=new Select (locator);
 		
 		select.selectByIndex(dropDownValue);
 		
 	}
 	
-	public static String checkIfElementExits(WebDriver driver, By locator) {
-		if(driver.findElement(locator).isDisplayed()){
-			return "";
-		}else {
-			return "";
-		}
-	}
+	
 }

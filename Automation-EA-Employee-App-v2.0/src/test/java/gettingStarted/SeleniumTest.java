@@ -4,6 +4,7 @@
 package gettingStarted;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
 
 import extensions.UIElementExtensions;
 import pages.CreateEmpoyeePage;
@@ -14,6 +15,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 
 
@@ -56,9 +58,5 @@ public class SeleniumTest {
 	}
 	
 	
-	//Logout
-	public void logout(WebDriver driver) {
-		UIElementExtensions.performClick(driver,By.xpath("//a[normalize-space()='Log off']"));
-	}
-
+	
 }

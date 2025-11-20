@@ -43,4 +43,12 @@ public class UIElementExtensions {
 		select.selectByIndex(dropDownValue);
 		
 	}
+	
+	public static String checkIfElementExits(WebDriver driver, By locator) {
+		if(driver.findElement(locator).isDisplayed()){
+			return "";
+		}else {
+			return "";
+		}
+	}
 }

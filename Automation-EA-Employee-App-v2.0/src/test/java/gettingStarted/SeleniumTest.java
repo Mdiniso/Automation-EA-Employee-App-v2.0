@@ -6,6 +6,9 @@ package gettingStarted;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import extensions.UIElementExtensions;
+import pages.CreateEmpoyeePage;
+import pages.HomePage;
+import pages.LoginPage;
 
 import java.time.Duration;
 
@@ -27,9 +30,18 @@ public class SeleniumTest {
 		WebDriver driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		OpenWebpage(driver);
-		Login(driver);
-		CreateUser(driver);
 		
+		HomePage Home=new HomePage(driver);
+		Home.Click_Login();
+		
+		LoginPage Login=new LoginPage(driver);
+		Login.PerformLogin("admin", "password");
+		Login.ClickLogin();
+		Home.Click_Employee_List();
+		
+		CreateEmpoyeePage EmplyeePage=new CreateEmpoyeePage(driver);
+		EmplyeePage.Create_CreateUser();
+		EmplyeePage.EnterUserDetails("AutoUserTestPuna", "45", "785", "AutoUserTestPuna@gmail.co.za");
 	
 		
 		
@@ -43,36 +55,6 @@ public class SeleniumTest {
 		
 	}
 	
-	//Login
-	public static void Login(WebDriver driver) {
-				
-		UIElementExtensions.performClick(driver, By.xpath("(//a[normalize-space()='Login'])[1]"));
-		UIElementExtensions.performEnterText(driver, By.xpath("//input[@id='UserName']"), "admin");
-		
-		
-		UIElementExtensions.performEnterText(driver,By.xpath("//input[@id='Password']"),"password");
-		
-		UIElementExtensions.performClick(driver,By.xpath("//input[@id='loginIn']"));
-		
-
-	
-	}
-	
-	//Create User
-	public static void CreateUser(WebDriver driver) {
-			
-		UIElementExtensions.performClick(driver,By.xpath("//a[normalize-space()='Employee List']"));
-	
-		UIElementExtensions.performClick(driver,By.xpath("//a[normalize-space()='Create New']"));
-		UIElementExtensions.performEnterText(driver,By.xpath("//input[@id='Name']"),"AutoUserTestPuna");
-		UIElementExtensions.performEnterText(driver,By.xpath("(//input[@id='Salary'])[1]"),"10000");
-		UIElementExtensions.performEnterText(driver,By.xpath("//input[@id='DurationWorked']"),"40");
-		UIElementExtensions.performEnterText(driver,By.xpath("//input[@id='Email']"),"AutoUserTestPuna@email.com");
-		UIElementExtensions.performClick(driver,By.xpath("//input[@value='Create']"));
-		  
-		 UIElementExtensions.performDropDownSelectionText(driver,By.xpath("//select[@id='Grade']"),"CLevel");
-		 
-	}
 	
 	//Logout
 	public void logout(WebDriver driver) {

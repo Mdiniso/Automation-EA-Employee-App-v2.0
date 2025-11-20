@@ -31,7 +31,7 @@ private By About=By.xpath("//a[normalize-space()='About']");
   }
   
   //Click Register Page
-  public void (){
+  public void Click_Register(){
 	  UIElementExtensions.performClick(driver, Register);
   }
   
